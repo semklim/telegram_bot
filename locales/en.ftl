@@ -6,6 +6,11 @@ setcommands_command =
     .description = Set bot commands
 
 welcome = Welcome!
+
+time-limit =
+    .timeout = The waiting time has expired.
+               Choose one of the menu options 👇
+
 language = 
     .select = Please, select your language
     .changed = Language successfully changed!
@@ -23,7 +28,7 @@ start =
     .start = Please choose a language.
     .cancel = Keep current.
     .answer = Thanks.
-              This is #bulochki)) chat where you can ask questions to our managers. Please choose a language.
+              This is #bulochki)) chat where you can ask questions to our managers.
     .not-valid = Please choose a language from the keyboard below.
 
 

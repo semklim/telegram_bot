@@ -2,26 +2,29 @@ import { Composer } from 'grammy';
 
 import type { Context } from '#root/bot/context.js';
 import { logHandle } from '#root/bot/helpers/logging.js';
+import { createMainMenuKeyboard } from '../keyboards/index.js';
 
 const composer = new Composer<Context>();
 
 const feature = composer.chatType('private');
 
-feature.on(':text', logHandle('workflow-:text'), (ctx) => {
+feature.on(':text', logHandle('workflow-:text'), async (ctx) => {
   const cmd = ctx.msg.text;
 
   switch (cmd) {
-    case (ctx.t('main_menu.secret-guest')): {
+    case ctx.t('main_menu.secret-guest'): {
       ctx.reply(ctx.t('main_menu.secret-guest'));
       break;
     }
-    case (ctx.t('main_menu.manager')): {
+    case ctx.t('main_menu.manager'): {
       ctx.reply(ctx.t('main_menu.manager'));
       break;
     }
 
     default:
-      return ctx.reply(ctx.t('main_menu.unhandled'));
+      return ctx.reply(ctx.t('main_menu.unhandled'), {
+        reply_markup: await createMainMenuKeyboard(ctx),
+      });
   }
 });
 
