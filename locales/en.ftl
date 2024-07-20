@@ -44,3 +44,15 @@ main_menu =
     .unhandled = Please choose one from the keyboard below.⏬
 
 go-back = 🔙Back
+
+share-contact =
+    .start = Please share your phone number
+    .btn = Send phone number
+    .answer = Thank you for your openness
+    .not_valid = Please provide your phone number.
+
+secret-guest =
+    .start = Secret Guest Survey for the #bulochki cafe-bakery chain
+    .date = Please indicate the date of your visit to the establishment
+    .time = Please indicate the exact time of your visit to the establishment
+    .address = Please indicate the address of the establishment:

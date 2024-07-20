@@ -10,6 +10,8 @@ import type { Context, SessionData } from '#root/bot/context.js';
 import { createContextConstructor } from '#root/bot/context.js';
 import {
   languageConversation,
+  secretGuestConversation,
+  shareContactConversation,
   startConversation,
 } from '#root/bot/conversations/index.js';
 import {
@@ -61,6 +63,8 @@ export function createBot(token: string, options: Options = {}) {
   protectedBot.use(conversations());
   protectedBot.use(startConversation());
   protectedBot.use(languageConversation());
+  protectedBot.use(secretGuestConversation());
+  protectedBot.use(shareContactConversation());
 
   // Handlers
   protectedBot.use(welcomeFeature);
